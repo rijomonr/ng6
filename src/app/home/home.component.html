@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+  <div class="col-md-6">
+  <form action="" method="post">
+    <input type="text" name="txt" id="txt" [(ngModel)]="goalText">
+    <input type="submit" class="btn" [value] = "btnText" (click)="addItem()">
+  </form>
+  </div>
+  <div class="col-md-6" [@goals]="goals.length">
+    <p>Your bucket({{itemNumber}})</p>
+    <hr>
+    <p *ngFor="let goal of goals; let i = index" (click)="removeItem(i)" style="background: red;">{{goal}}</p>
+
+  </div>
+</div>
+</div>
